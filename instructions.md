@@ -44,7 +44,7 @@ For this reason we highly recommend setting up a Sub Graph for your new deployme
 
 - Instructions for setting up a subgraph →
 
-[Deploying Subgraph For New Uniswap Deployment](https://www.notion.so/Deploying-Subgraph-For-New-Uniswap-Deployment-acc3e72f31e74f9b93349dca2e73d2ec)
+[Deploying Subgraph For New Uniswap Deployment](https://github.com/Uniswap/v3-new-chain-deployments/blob/ak/first-updates/subgraph_instructions.md)
 
 ## 3. Update the Auto Router
 
@@ -73,3 +73,6 @@ Link to Instructions → [ TODO ] Add section to https://github.com/Uniswap/inte
 - [Gov Proposal on this](https://gov.uniswap.org/t/proposed-template-for-future-cross-chain-deployment-proposals/16611)
 - [Active Proposals](https://app.uniswap.org/#/vote?chain=mainnet)
 - [https://gov.uniswap.org/t/proposed-template-for-future-cross-chain-deployment-proposals/16611](https://gov.uniswap.org/t/proposed-template-for-future-cross-chain-deployment-proposals/16611)
+
+# TODO
+- Set links back to master versions when pushing
