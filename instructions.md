@@ -58,15 +58,28 @@ Instructions for updating can be found in the Readme of the repo.
 
 [ FAQs / Troubleshooting ]
 
-## 4. Update the Front End App
+## 4. Create Your Token List
+[ Overview ] 
+
+[ Link to Instructions ] 
+
+[ FAQ ]
+
+## 5. Update the Front End App
 
 The [Uniswap App](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. To access this user base, you’ll need to update the open source App code to 
-
  
 
 Link to Instructions → [ TODO ] Add section to https://github.com/Uniswap/interface 
 
 [ FAQs / Troubleshooting ]
+
+## 6. Create a Governance Bridge
+[ Overview ] 
+
+[ Link to Instructions ] 
+
+[ FAQ ]
 
 # Helpful Links
 
