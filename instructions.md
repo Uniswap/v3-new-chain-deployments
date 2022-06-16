@@ -9,6 +9,8 @@ To continue removing Uniswap Labs as a dependency from this process and turn mor
 
 The following sections outline the process for deploying the Uniswap V3 Protocol and integrating into the existing ecosystem including making it available for trading on [app.uniswap.org](http://app.uniswap.org), [info.uniswap.org](http://info.uniswap.org) and creating a Subgraph for it’s data. 
 
+[ TODO -> Create a visual / diagram of all the repos and components ] 
+
 Teams should follow these steps sequentially for best results. 
 
 ## 1. Deploy the V3 Protocol Contracts
