@@ -46,7 +46,7 @@ For this reason we highly recommend setting up a Sub Graph for your new deployme
 
 - Instructions for setting up a subgraph →
 
-[Deploying Subgraph For New Uniswap Deployment](https://github.com/Uniswap/v3-new-chain-deployments/blob/ak/first-updates/subgraph_instructions.md)
+[Creating Subgraph For New Uniswap Deployment](https://github.com/Uniswap/v3-new-chain-deployments/blob/main/subgraph_instructions.md)
 
 ## 3. Update the Auto Router
 
