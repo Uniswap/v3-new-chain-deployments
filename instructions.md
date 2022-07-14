@@ -72,6 +72,7 @@ Instructions for updating can be found in the Readme of the repo.
     },
     ...
     ]
+}
 ```
 
 As a next step in the deployment of a new chain, you will author a token list to represent the tokens supported on your chain and host it (preferably on IPFS or another decentralized system). With an up to date Token List, you can easily manage the tokens supported in the Uniswap App as well as in dApps across the ecosystem. 
@@ -81,12 +82,19 @@ Follow the instructions in the [Token Lists Package](https://github.com/Uniswap/
 
 # Update the Front End App
 
-The [Uniswap App](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. To access this user base, you’ll need to update the open source App code to 
+The [Uniswap App](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. To access this user base, you’ll need to update the [open source App code](https://github.com/Uniswap/interface) to include the newly deployed chain.  
+
+Uniswap App Repo → https://github.com/Uniswap/interface
+
+
+There will be slight, specific nuances with each new chain addition but we've found that these additions have the same basic steps. As such we recommend looking at a past PR for a new chain addition (For example, the [Celo addition](https://github.com/Uniswap/interface/pull/3915/)) to understand how to implement this feature. At a high level, the steps you'll complete are: 
+
+- **[ TODO ]**
  
+ Once the necessary changes are made and you've tested the integration locally, submit a PR to the repo for review.
 
-Link to Instructions → [ TODO ] Add section to https://github.com/Uniswap/interface 
-
-[ FAQs / Troubleshooting ]
+# Update Info Site
+The [info.uniswap.org](https://info.uniswap.org)
 
 # Create a Governance Bridge
 [ Overview ] 
