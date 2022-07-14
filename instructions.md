@@ -38,15 +38,8 @@ When you're ready to start setting up your Subgraph, follow these detailed instr
 
 # Update the Auto Router
 
- Uniswap Labs has produced an [Auto Router API](https://github.com/Uniswap/routing-api), an off chain system that can calculate the most efficient trade routes for assets on your chain. You will need to make updates to the Routing API repo to support your chain. 
+- [ TODO ] 
 
-### How to Update the Auto Rotuer
-
-Instructions for updating can be found in the Readme of the repo. 
-
-- [ TODO ] Add instructions to https://github.com/Uniswap/routing-api
-
-[ FAQs / Troubleshooting ]
 
 # Create Your Token List
 [Token Lists](https://tokenlists.org/) are another key primitive in the Uniswap and larger DeFi eco-system. Token Lists are a simple schema for identifying supported tokens on a dApp. 
