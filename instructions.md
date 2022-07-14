@@ -87,14 +87,21 @@ The [Uniswap App](http://app.uniswap.org) is one of the most used dApps in web3 
 Uniswap App Repo → https://github.com/Uniswap/interface
 
 
-There will be slight, specific nuances with each new chain addition but we've found that these additions have the same basic steps. As such we recommend looking at a past PR for a new chain addition (For example, the [Celo addition](https://github.com/Uniswap/interface/pull/3915/)) to understand how to implement this feature. At a high level, the steps you'll complete are: 
+There will be slight, specific nuances with each new chain addition but we've found that these additions have the same basic steps. As such we recommend looking at a past PR for a new chain addition ([Celo example](https://github.com/Uniswap/interface/pull/3915/)) to understand how to implement this feature. At a high level, the steps you'll complete are: 
 
 - **[ TODO ]**
  
  Once the necessary changes are made and you've tested the integration locally, submit a PR to the repo for review.
 
 # Update Info Site
-The [info.uniswap.org](https://info.uniswap.org)
+The [info.uniswap.org](https://info.uniswap.org) is another key piece of the Uniswap Ecosystem, where users go to get reliable data. Having a working Subgraph is a requirement for this step. If The Graph does not yet support your chain, these instructions will not work for you. You may either proceed without adding your chain to [info.uniswap.org](https://info.uniswap.org) or feel free to propose another solution to support it. 
+
+If you were able to get a Subgraph working you can proceed to add your chain to the Info site. The process will be similar to updating the App site, we recommend following the changes made for another chain deployment ([Celo example](https://github.com/Uniswap/v3-info/)) to see the changes you'll need to make. At a high level, the changes will be: 
+
+ - **[ TODO ]**
+
+ Once you've made the changes and tested them locally, submit a PR to the open source [Info Repo](https://github.com/Uniswap/v3-info/). 
+
 
 # Create a Governance Bridge
 [ Overview ] 
@@ -107,12 +114,10 @@ The [info.uniswap.org](https://info.uniswap.org)
 [ Overview ]
 
 # Recommended Optional Steps
-[ Overview ]
+[ TBD if this is needed ]
 
 # Helpful Links
 
 - [Gov Proposal on this](https://gov.uniswap.org/t/proposed-template-for-future-cross-chain-deployment-proposals/16611)
 - [Active Proposals](https://app.uniswap.org/#/vote?chain=mainnet)
 - [https://gov.uniswap.org/t/proposed-template-for-future-cross-chain-deployment-proposals/16611](https://gov.uniswap.org/t/proposed-template-for-future-cross-chain-deployment-proposals/16611)
-
-# TODO
