@@ -8,12 +8,12 @@ To continue removing Uniswap Labs as a dependency from this process and turn mor
 # Where we're going
 After following the instructions presented in the below sections, networks who have received approval from Uniswap Governance will have the Uniswap V3 protocol running fully on their EVM chain meaning the following is true: 
 
-- All contracts in the [@uniswap/v3-core](https://github.com/Uniswap/v3-core) and [@uniswap/v3-periphery](https://github.com/Uniswap/v3-periphery) repos are deployed to the new chain
+- All contracts in the [@uniswap/v3-core](https://github.com/Uniswap/v3-core) and [@uniswap/v3-periphery](https://github.com/Uniswap/v3-periphery) repos are deployed to the new host chain
+- A [Sub Graph](https://thegraph.com/docs/en/developer/define-subgraph-hosted/) and [Token Lists](https://tokenlists.org/) have been created for the new deployment
 - The [app.uniswap.org](https://app.uniswap.org) and [info.uniswap.org](info.uniswap.org) sites include all supported functionality on the newly deployed EVM chain
-- Uniswap Governance on the Ethereum Mainnet chain has an established message bridge with the deployment on the new EVM chain
+- Uniswap Governance on the Ethereum Mainnet chain has an established message bridge with the deployment on the new host chain
 
-
-[ TODO -> Create a visual / diagram of all the repos and components ] 
+![ Deployment Map ](https://github.com/Uniswap/v3-new-chain-deployments/blob/Assets/Deployment%20Map.png?raw=true) 
 
 Teams should follow these steps sequentially for best results. 
 
@@ -36,9 +36,12 @@ The best way to set up your Subgraph is to start with an existing one from anoth
 
 When you're ready to start setting up your Subgraph, follow these detailed instructions → [Setting up a Subgraph](https://github.com/Uniswap/v3-new-chain-deployments/blob/main/subgraph_instructions.md).
 
-# Update the Auto Router
+# Update the Smart Order Router
+The Uniswap [Smart Order Router](https://github.com/Uniswap/smart-order-router) is a package that calculates the most efficient swap route off chain and produces calldata to execute that trade. The Smart Order Router is the system that calculates trade routes for https://app.uniswap.org so enabling new deployments in it is required to have them on the site.
 
-- [ TODO ] 
+To add a new deployment to the Smart Order Router you'll need to explicitly add references to new deployments in the open source [package](https://github.com/Uniswap/smart-order-router). Specific instructions of what to update can be found here → https://github.com/Uniswap/smart-order-router#adding-a-new-chain
+
+Once your changes have been tested locally, open a PR in the repo to merge them in. 
 
 
 # Create Your Token List
@@ -96,18 +99,11 @@ If you were able to get a Subgraph working you can proceed to add your chain to 
  Once you've made the changes and tested them locally, submit a PR to the open source [Info Repo](https://github.com/Uniswap/v3-info/). 
 
 
-# Create a Governance Bridge
-[ Overview ] 
-
-[ Link to Instructions ] 
-
-[ FAQ ]
+# Bridge Uniswap Governance
+[ *Coming Soon* ]
 
 # Validate Your Deployment
-[ Overview ]
-
-# Recommended Optional Steps
-[ TBD if this is needed ]
+[ *Coming Soon* ]
 
 # Helpful Links
 
