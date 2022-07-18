@@ -103,7 +103,13 @@ If you were able to get a Subgraph working you can proceed to add your chain to 
 [ *Coming Soon* ]
 
 # Validate Your Deployment
-[ *Coming Soon* ]
+- Compile the list of [deployed addresses](https://github.com/Uniswap/deploy-v3/blob/b7aac0f1c5353b36802dc0cf95c426d2ef0c3252/src/deploy.ts#L23-L36) from the deploy-v3 script.
+- Ensure that all of the contracts are verified on your blockchain explorer (i.e. Etherscan).
+- Pull down the deployed bytecode for each contract(i.e. from [Etherscan](https://etherscan.io/address/0x1f98431c8ad98523631ae4a59f267346ea31f984#code) or a tool like [Cast](https://github.com/foundry-rs/foundry/tree/master/cast).
+- Compare the bytecode to the [mainnet deployment](https://docs.uniswap.org/protocol/reference/deployments). The only differences should be the contract immutables, including addresses of other deployment contracts.
+- Test the deployment! Some important cases to consider:
+  - Swapping native asset -> ERC20 and ERC20 -> native asset through the SwapRouter
+  - Adding and removing liquidity with native asset through the NonfungiblePositionManager
 
 # Helpful Links
 
