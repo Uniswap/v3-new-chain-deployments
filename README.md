@@ -21,11 +21,11 @@ Teams should follow these steps sequentially for best results.
 
 The first step in setting up Uniswap V3 on a new EVM chain is to deploy the smart contracts that make up the protocol. For convenience, the Uniswap Labs team has created a set of deployment scripts and management CLI that will coordinate and deploy the necessary contracts to a new EVM chain. 
 
-All you need to do is create the account to deploy with, fund it for gas fees (40-50M gas required), then run one command in the CLI. The script will sequentially deploy each contract, creating checkpoints as it goes that can be reverted back to in case any issues arise. [TODO not sure about this]
+All you need to do is create the account to deploy with, fund it for gas fees (40-50M gas required), then run one command in the CLI. The script will sequentially deploy each contract, creating checkpoints as it goes that can be reverted back to in case any issues arise.
 
 To start a deployment follow the detailed CLI instructions here → https://github.com/Uniswap/deploy-v3
 
-# Set Up Subgraph
+# Deploying the Subgraphs
 [The Graph](https://thegraph.com/en/) is one of the most popular blockchain data indexing tools. If the chain you deployed to supports it, it is highly recommended that you set up a [Sub Graph](https://thegraph.com/docs/en/developer/define-subgraph-hosted/) to index Uniswap activity on the new chain. 
 
 Having a Subgraph for your deployment not only allows integrators to access fast, reliable data, but will also make integrating with existing parts of the Uniswap Ecosystem, like [info.uniswap.org](info.uniswap.org) a seamless experience. 
@@ -76,14 +76,14 @@ As a next step in the deployment of a new chain, you will author a token list to
 Follow the instructions in the [Token Lists Package](https://github.com/Uniswap/token-lists#authoring-token-lists) to author, validate and host your token list. You'll need a valid Token List to proceed with future steps. 
 
 
-# Update the Front End App
+# Update the Uniswap Interface
 
-The [Uniswap App](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. To access this user base, you’ll need to update the [open source App code](https://github.com/Uniswap/interface) to include the newly deployed chain.  
+The [Interface](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. To access this user base, you’ll need to update the [open source App code](https://github.com/Uniswap/interface) to include the newly deployed chain.  
 
 Uniswap App Repo → https://github.com/Uniswap/interface
 
 
-There will be slight, specific nuances with each new chain addition but we've found that these additions have the same basic steps. As such we recommend looking at a past PR for a new chain addition ([Celo example](https://github.com/Uniswap/interface/pull/3915/)) to understand how to implement this feature. At a high level, the steps you'll complete are: 
+There will be slight, specific nuances with each new integration however, we've found that these additions have the same basic steps. As such, we recommend referencing a recent integration ([Celo example](https://github.com/Uniswap/interface/pull/3915/)) to better understand what changes must be made. At a high level, the steps you'll complete are: 
 
 - **[ TODO ]**
  
@@ -92,7 +92,7 @@ There will be slight, specific nuances with each new chain addition but we've fo
 # Update Info Site
 The [info.uniswap.org](https://info.uniswap.org) is another key piece of the Uniswap Ecosystem, where users go to get reliable data. Having a working Subgraph is a requirement for this step. If The Graph does not yet support your chain, these instructions will not work for you. You may either proceed without adding your chain to [info.uniswap.org](https://info.uniswap.org) or feel free to propose another solution to support it. 
 
-If you were able to get a Subgraph working you can proceed to add your chain to the Info site. The process will be similar to updating the App site, we recommend following the changes made for another chain deployment ([Celo example](https://github.com/Uniswap/v3-info/)) to see the changes you'll need to make. At a high level, the changes will be: 
+If you were able to get a Subgraph working you can proceed to add your chain to the Info site. The process will be similar to updating the Interface, we recommend referencing the changes made for a recent integration ([Celo example](https://github.com/Uniswap/v3-info/)) to better understand the changes required. At a high level, the changes will be: 
 
  - **[ TODO ]**
 
