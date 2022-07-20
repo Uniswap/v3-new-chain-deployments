@@ -9,9 +9,9 @@ To continue removing Uniswap Labs as a dependency from this process and turn mor
 After following the instructions presented in the below sections, networks who have received approval from Uniswap Governance will have the Uniswap V3 protocol running fully on their EVM chain meaning the following is true: 
 
 - All contracts in the [@uniswap/v3-core](https://github.com/Uniswap/v3-core) and [@uniswap/v3-periphery](https://github.com/Uniswap/v3-periphery) repos are deployed to the new host chain
-- A [Sub Graph](https://thegraph.com/docs/en/developer/define-subgraph-hosted/) and [Token Lists](https://tokenlists.org/) have been created for the new deployment
+- [Sub Graphs](https://thegraph.com/docs/en/developer/define-subgraph-hosted/) and [Token Lists](https://tokenlists.org/) have been created and deployed
 - The [app.uniswap.org](https://app.uniswap.org) and [info.uniswap.org](info.uniswap.org) sites include all supported functionality on the newly deployed EVM chain
-- Uniswap Governance on the Ethereum Mainnet chain has an established message bridge with the deployment on the new host chain
+- Uniswap Governance on the Ethereum Mainnet governs an established message bridge with the deployment on the new host chain
 
 ![ Deployment Map ](https://github.com/Uniswap/v3-new-chain-deployments/blob/Assets/Deployment%20Map.png?raw=true) 
 
@@ -19,9 +19,9 @@ Teams should follow these steps sequentially for best results.
 
 # Deploy the V3 Protocol Contracts
 
-The first step in setting up Uniswap V3 on a new EVM chain is to deploy the smart contracts that make up the protocol. For covnenience, the Uniswap Labs team has created a set of deployment scripts and management CLI for running it that will coordinate and deploy the necessary contracts to a new EVM chain. 
+The first step in setting up Uniswap V3 on a new EVM chain is to deploy the smart contracts that make up the protocol. For convenience, the Uniswap Labs team has created a set of deployment scripts and management CLI that will coordinate and deploy the necessary contracts to a new EVM chain. 
 
-All you need to do is create the account to deploy with, fund it for gas fees (40-50M gas required), then run one command in the CLI. The script will sequentially deploy each contract, creating checkpoints as it goes that can be reverted back to in case any issues arise. 
+All you need to do is create the account to deploy with, fund it for gas fees (40-50M gas required), then run one command in the CLI. The script will sequentially deploy each contract, creating checkpoints as it goes that can be reverted back to in case any issues arise. [TODO not sure about this]
 
 To start a deployment follow the detailed CLI instructions here → https://github.com/Uniswap/deploy-v3
 
