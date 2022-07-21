@@ -76,12 +76,13 @@ As a next step in the deployment of a new chain, you will author a token list to
 Follow the instructions in the [Token Lists Package](https://github.com/Uniswap/token-lists#authoring-token-lists) to author, validate and host your token list. You'll need a valid Token List to proceed with future steps. 
 
 
-# Update the Front End App
+# Update the Front End App & Widget
 
-The [Uniswap App](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. To access this user base, you’ll need to update the [open source App code](https://github.com/Uniswap/interface) to include the newly deployed chain.  
+The [Uniswap App](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. The [Swap Widget](https://docs.uniswap.org/sdk/widgets/swap-widget), used by OpenSea, FWB, and more, bundles the whole Uniswap experience into a single React component that developers can embed in their apps.
 
-Uniswap App Repo → https://github.com/Uniswap/interface
-
+To access these user bases, you’ll need to update the open source code to include the newly deployed chain:
+* Uniswap App Repo → https://github.com/Uniswap/interface
+* Uniswap Widgets Repo → https://github.com/Uniswap/widgets
 
 There will be slight, specific nuances with each new chain addition but we've found that these additions have the same basic steps. As such we recommend looking at a past PR for a new chain addition ([Celo example](https://github.com/Uniswap/interface/pull/3915/)) to understand how to implement this feature. At a high level, the steps you'll complete are: 
 
