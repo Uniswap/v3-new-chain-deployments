@@ -83,11 +83,23 @@ The [Interface](http://app.uniswap.org) is one of the most used dApps in web3 an
 Uniswap App Repo → https://github.com/Uniswap/interface
 
 
-There will be slight, specific nuances with each new integration however, we've found that these additions have the same basic steps. As such, we recommend referencing a recent integration ([Celo example](https://github.com/Uniswap/interface/pull/3915/)) to better understand what changes must be made. At a high level, the steps you'll complete are: 
+The recent [Celo integration](https://github.com/Uniswap/interface/pull/3915/) included the changes required to support future EVM compatible chains with alternative contract addresses.
+While there will likely be nuances with each new integration, you can follow the basic steps (below) and reference the [Celo PR](https://github.com/Uniswap/interface/pull/3915/) to guide you when making changes. 
 
-- **[ TODO ]**
- 
- Once the necessary changes are made and you've tested the integration locally, submit a PR to the repo for review.
+At a high level, the steps you'll complete are: 
+
+- Add respective constants and links: 
+  - chainId, chain name, contract addresses, chain info, token lists, etc. (these can be found under the ./src/constants dir)
+  - the v3-subgraph URL (see ./state/data/slice)
+  - native token logo (see ./assets/svg) 
+  - explorer link (see ./utils/getExplorerLink.ts)
+  - RPC URL (see ./utils/switchChain)
+- The Uniswap interface currency selector has a section for the most common base assets, these respective tokens are hard coded into the interface (see ./constants/tokens). Follow the pattern there to add 4-8 tokens as well as support for the native asset. Afterwards, add those tokens as common bases (see ./constants/routing) 
+- Look and feel
+  - update the background colors (see src/theme)
+  - update the network alert (see src/components/NetworkAlert)
+
+ Once the necessary changes are made, and you've tested the integration locally, submit a PR from your branch to Uniswap/interface main for review (make sure to follow the Uniswap PR guidelines).
 
 # Update Info Site
 The [info.uniswap.org](https://info.uniswap.org) is another key piece of the Uniswap Ecosystem, where users go to get reliable data. Having a working Subgraph is a requirement for this step. If The Graph does not yet support your chain, these instructions will not work for you. You may either proceed without adding your chain to [info.uniswap.org](https://info.uniswap.org) or feel free to propose another solution to support it. 
