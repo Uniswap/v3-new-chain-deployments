@@ -104,9 +104,22 @@ At a high level, the steps you'll complete are:
 # Update Info Site
 The [info.uniswap.org](https://info.uniswap.org) is another key piece of the Uniswap Ecosystem, where users go to get reliable data. Having a working Subgraph is a requirement for this step. If The Graph does not yet support your chain, these instructions will not work for you. You may either proceed without adding your chain to [info.uniswap.org](https://info.uniswap.org) or feel free to propose another solution to support it. 
 
-If you were able to get a Subgraph working you can proceed to add your chain to the Info site. The process will be similar to updating the Interface, we recommend referencing the changes made for a recent integration ([Celo example](https://github.com/Uniswap/v3-info/)) to better understand the changes required. At a high level, the changes will be: 
+If you were able to get a Subgraph working you can proceed to add your chain to the Info site. The process will be similar to updating the Interface, we recommend referencing the changes made for the recent ([Celo integration](https://github.com/Uniswap/v3-info/pull/235)) to better understand the changes required. 
 
- - **[ TODO ]**
+At a high level, the changes will be: 
+
+ - Add the respective chains subgraph clients (follow the pattern in ./apollo/client.ts)
+ - Add constants and links:
+   - chain id to supported chain id (see ./constants/chains.ts)
+   - token list (see ./constants/lists.ts)
+   - Multicall contract address (see ./constants/multicall)
+   - explorer link (see ./src/utils)
+ - Look and feel
+   - similar to the interface, add the logo svg (see assets/images)
+   - add the network info (see constants/networks)
+   - display the logo follow the pattern in ./components/CurrencyLogo
+   - display native currency price (see ./components/header/TopBar.tsx)
+ - Add the network to the network dropdown (./menu/NetworkDropdown)
 
  Once you've made the changes and tested them locally, submit a PR to the open source [Info Repo](https://github.com/Uniswap/v3-info/). 
 
