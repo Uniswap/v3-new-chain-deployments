@@ -21,11 +21,11 @@ Teams should follow these steps sequentially for best results.
 
 The first step in setting up Uniswap V3 on a new EVM chain is to deploy the smart contracts that make up the protocol. For convenience, the Uniswap Labs team has created a set of deployment scripts and management CLI that will coordinate and deploy the necessary contracts to a new EVM chain. 
 
-All you need to do is create the account to deploy with, fund it for gas fees (40-50M gas required), then run one command in the CLI. The script will sequentially deploy each contract, creating checkpoints as it goes that can be reverted back to in case any issues arise. [TODO not sure about this]
+All you need to do is create the account to deploy with, fund it for gas fees (40-50M gas required), then run one command in the CLI. The script will sequentially deploy each contract, creating checkpoints as it goes that can be reverted back to in case any issues arise.
 
 To start a deployment follow the detailed CLI instructions here → https://github.com/Uniswap/deploy-v3
 
-# Set Up Subgraph
+# Deploying the Subgraphs
 [The Graph](https://thegraph.com/en/) is one of the most popular blockchain data indexing tools. If the chain you deployed to supports it, it is highly recommended that you set up a [Sub Graph](https://thegraph.com/docs/en/developer/define-subgraph-hosted/) to index Uniswap activity on the new chain. 
 
 Having a Subgraph for your deployment not only allows integrators to access fast, reliable data, but will also make integrating with existing parts of the Uniswap Ecosystem, like [info.uniswap.org](info.uniswap.org) a seamless experience. 
@@ -76,26 +76,55 @@ As a next step in the deployment of a new chain, you will author a token list to
 Follow the instructions in the [Token Lists Package](https://github.com/Uniswap/token-lists#authoring-token-lists) to author, validate and host your token list. You'll need a valid Token List to proceed with future steps. 
 
 
-# Update the Front End App & Widget
 
-The [Uniswap App](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. The [Swap Widget](https://docs.uniswap.org/sdk/widgets/swap-widget), used by OpenSea, FWB, and more, bundles the whole Uniswap experience into a single React component that developers can embed in their apps.
+# Update the Uniswap Interface
+
+The [Interface](http://app.uniswap.org) is one of the most used dApps in web3 and is where over 60% of Uniswap trading occurs. To access this user base, you’ll need to update the [open source App code](https://github.com/Uniswap/interface) to include the newly deployed chain.  
+
+Uniswap App Repo → https://github.com/Uniswap/interface
+
 
 To access these user bases, you’ll need to update the open source code to include the newly deployed chain:
 * Uniswap App Repo → https://github.com/Uniswap/interface
 * Uniswap Widgets Repo → https://github.com/Uniswap/widgets
 
-There will be slight, specific nuances with each new chain addition but we've found that these additions have the same basic steps. As such we recommend looking at a past PR for a new chain addition ([Celo example](https://github.com/Uniswap/interface/pull/3915/)) to understand how to implement this feature. At a high level, the steps you'll complete are: 
+The recent [Celo integration](https://github.com/Uniswap/interface/pull/3915/) included the changes required to support future EVM compatible chains with alternative contract addresses.
+While there will likely be nuances with each new integration, you can follow the basic steps (below) and reference the [Celo PR](https://github.com/Uniswap/interface/pull/3915/) to guide you when making changes. 
 
-- **[ TODO ]**
- 
- Once the necessary changes are made and you've tested the integration locally, submit a PR to the repo for review.
+At a high level, the steps you'll complete are: 
+
+- Add respective constants and links: 
+  - chainId, chain name, contract addresses, chain info, token lists, etc. (these can be found under the ./src/constants dir)
+  - the v3-subgraph URL (see ./state/data/slice)
+  - native token logo (see ./assets/svg) 
+  - explorer link (see ./utils/getExplorerLink.ts)
+  - RPC URL (see ./utils/switchChain)
+- The Uniswap interface currency selector has a section for the most common base assets, these respective tokens are hard coded into the interface (see ./constants/tokens). Follow the pattern there to add 4-8 tokens as well as support for the native asset. Afterwards, add those tokens as common bases (see ./constants/routing) 
+- Look and feel
+  - update the background colors (see src/theme)
+  - update the network alert (see src/components/NetworkAlert)
+
+ Once the necessary changes are made, and you've tested the integration locally, submit a PR from your branch to Uniswap/interface main for review (make sure to follow the Uniswap PR guidelines).
 
 # Update Info Site
 The [info.uniswap.org](https://info.uniswap.org) is another key piece of the Uniswap Ecosystem, where users go to get reliable data. Having a working Subgraph is a requirement for this step. If The Graph does not yet support your chain, these instructions will not work for you. You may either proceed without adding your chain to [info.uniswap.org](https://info.uniswap.org) or feel free to propose another solution to support it. 
 
-If you were able to get a Subgraph working you can proceed to add your chain to the Info site. The process will be similar to updating the App site, we recommend following the changes made for another chain deployment ([Celo example](https://github.com/Uniswap/v3-info/)) to see the changes you'll need to make. At a high level, the changes will be: 
+If you were able to get a Subgraph working you can proceed to add your chain to the Info site. The process will be similar to updating the Interface, we recommend referencing the changes made for the recent ([Celo integration](https://github.com/Uniswap/v3-info/pull/235)) to better understand the changes required. 
 
- - **[ TODO ]**
+At a high level, the changes will be: 
+
+ - Add the respective chains subgraph clients (follow the pattern in ./apollo/client.ts)
+ - Add constants and links:
+   - chain id to supported chain id (see ./constants/chains.ts)
+   - token list (see ./constants/lists.ts)
+   - Multicall contract address (see ./constants/multicall)
+   - explorer link (see ./src/utils)
+ - Look and feel
+   - similar to the interface, add the logo svg (see assets/images)
+   - add the network info (see constants/networks)
+   - display the logo follow the pattern in ./components/CurrencyLogo
+   - display native currency price (see ./components/header/TopBar.tsx)
+ - Add the network to the network dropdown (./menu/NetworkDropdown)
 
  Once you've made the changes and tested them locally, submit a PR to the open source [Info Repo](https://github.com/Uniswap/v3-info/). 
 
