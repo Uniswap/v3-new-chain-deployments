@@ -10,7 +10,7 @@ After following the instructions presented in the below sections, networks who h
 
 - All contracts in the [@uniswap/v3-core](https://github.com/Uniswap/v3-core) and [@uniswap/v3-periphery](https://github.com/Uniswap/v3-periphery) repos are deployed to the new host chain
 - [Sub Graphs](https://thegraph.com/docs/en/developer/define-subgraph-hosted/) and [Token Lists](https://tokenlists.org/) have been created and deployed
-- The [app.uniswap.org](https://app.uniswap.org) and [info.uniswap.org](info.uniswap.org) sites include all supported functionality on the newly deployed EVM chain
+- The [app.uniswap.org](https://app.uniswap.org) and [info.uniswap.org](https://info.uniswap.org/) sites include all supported functionality on the newly deployed EVM chain
 - Uniswap Governance on the Ethereum Mainnet governs an established message bridge with the deployment on the new host chain
 
 ![ Deployment Map ](https://github.com/Uniswap/v3-new-chain-deployments/blob/Assets/Deployment%20Map.png?raw=true) 
