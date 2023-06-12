@@ -22,7 +22,7 @@ Before diving in make sure too:
 
 ## V3-subgraph Instructions
 1. Fork Uniswap's [v3-subgraph](https://github.com/Uniswap/v3-subgraph) . 
-2. You’ll need to make a series of changes to the mappings and constants in order for you subgraph to work with the new network
+2. You’ll need to make a series of changes to the mappings and constants in order for your subgraph to work with the new network:
     1. Change all network dependent values in the subgraph.yaml file [https://github.com/Uniswap/v3-subgraph/blob/main/subgraph.yaml](https://github.com/Uniswap/v3-subgraph/blob/main/subgraph.yaml), this includes 
         1.  Remove the `graft` helper instruction
         2. change `network` to correct network in all locations
