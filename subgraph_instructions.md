@@ -15,10 +15,10 @@ Before diving in make sure too:
 1. Fork the [blocks-subgraph](https://github.com/ianlapham/blocks-subgraph)
 2. Deploy a simple dummy contract on the respective chain which will be used as a point of reference by the subgraph when indexing block data. It can be an existing contract although, the ABI is required to proceed. Replace the existing ABI 'ConverterRegistryContract.json' with the one from your dummy contract deployment.
 3. Change the 'abi' values in subgraph.yaml to the name of the abi file you have added. 
-4. Adjust the 'startBlock' key values in subgraph.yaml to the block number before your Uniswap core and periphery contracts deployment.
+4. Adjust the 'startBlock' key values in subgraph.yaml to the block number before your Uniswap v3CoreFactoryAddress deployment.
 5. Add a script to the package.json file that includes your access token e.g.'
-   >"deploy-to-new-chain": "graph deploy --access-token ${ACCESS_TOKEN} github-username/subgraph-name --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug"
-6. Finally, run 'yarn graph-build' then 'yarn deploy-to-new-chain'
+   >"deploy-to-new-chain": "graph deploy --access-token ${ACCESS_TOKEN} ${github-username}/${subgraph-name} --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug"
+6. Finally, run in order: 'yarn install', 'yarn codegen', 'yarn build' then 'yarn deploy-to-new-chain'
 
 ## V3-subgraph Instructions
 1. Fork Uniswap's [v3-subgraph](https://github.com/Uniswap/v3-subgraph) . 
