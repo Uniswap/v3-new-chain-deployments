@@ -28,7 +28,7 @@ Before diving in make sure too:
         2. change `network` to correct network in all locations
         3. update address for `factory`, `NonfungiblePositionManager`
     2. Update all pricing constants [here](https://github.com/Uniswap/v3-subgraph/blob/bf03f940f17c3d32ee58bd37386f26713cff21e2/src/utils/pricing.ts#L7)
-        1. `WETH_ADDRESS` should be the wrapped native currency equivilant for new network
+        1. `WETH_ADDRESS` should be the wrapped native currency equivalent for new network
         2. `USDC_WETH_03_POOL` should be some reliable pool to derive the price of token in previous step 
         3. `WHITELIST_TOKENS` should be tokens that are expected to have accurate prices (well arbitraged pools), this is used to derive USD values so extra precaution needs to be used to ensure the quality of the data 
         4. `STABLE_COINS` are token addresses for any stabelcoins used in USD heuristic 
