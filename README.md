@@ -1,4 +1,5 @@
 
+
 # Summary
 
 The Uniswap Labs team believes the future of Web3 is multi-chain, that’s why in early 2022 we released the [scripts and instructions](https://uniswap.org/blog/multichain-uniswap) for the community to deploy the V3 Protocol to chains that have received a license exemption via governance vote. 
@@ -130,7 +131,11 @@ At a high level, the changes will be:
 
 
 # Bridge Uniswap Governance
-[ *Coming Soon* ]
+Uniswap Governance plays a crucial role in the ongoing management of new deployments including providing the community with the ability to add new fee tiers and enable the fee switch on pools. Since Governance is hosted on the Ethereum Mainnet chain, we'll need to utilize a Message Bridge to allow Governance to make updates to your deployment. At a high level, the setup will look like the following: 
+- Choose an Arbitrary Message Bridge solution that has endpoints on Ethereum Mainnet and the chain being deployed to (More detailed recommendations for bridges can be found [here](https://gov.uniswap.org/t/proposed-template-for-future-cross-chain-deployment-proposals/16611))
+- Create a multi-sig or safe on the chain you're deploying to, set this as the owner of the deployed V3 protocol
+- Create a multi-sig or safe on Ethereum Mainnet to receive messages from the Uniswap Governance contract
+- Configure the chosen AMB to route messages from Mainnet endpoint to the endpoint on the new chain
 
 # Validate Your Deployment
 - Compile the list of [deployed addresses](https://github.com/Uniswap/deploy-v3/blob/b7aac0f1c5353b36802dc0cf95c426d2ef0c3252/src/deploy.ts#L23-L36) from the deploy-v3 script.
